@@ -11,21 +11,21 @@ x_train = x_train / 255.0
 x_test = x_test / 255.0
 # #print(x_train[0])
 
-# model = tf.keras.models.Sequential()
-# model.add(tf.keras.layers.Flatten(input_shape=(28, 28)))
-# model.add(tf.keras.layers.Dense(128, activation='relu'))
-# model.add(tf.keras.layers.Dense(128, activation='relu'))
-# model.add(tf.keras.layers.Dense(10, activation='softmax'))
+model = tf.keras.models.Sequential()
+model.add(tf.keras.layers.Flatten(input_shape=(28, 28)))
+model.add(tf.keras.layers.Dense(128, activation='relu'))
+model.add(tf.keras.layers.Dense(128, activation='relu'))
+model.add(tf.keras.layers.Dense(10, activation='softmax'))
 
-# model.compile(optimizer='adam', loss='sparse_categorical_crossentropy' , metrics=['accuracy'])
-# model.fit(x_train, y_train, epochs=5)
-# model.save('digitsRecog.keras')
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy' , metrics=['accuracy'])
+model.fit(x_train, y_train, epochs=5)
+model.save('digitsRecog.keras')
 
 
-model= tf.keras.models.load_model('digitsRecog.keras')
-loss, accuracy= model.evaluate(x_test, y_test)
-print(loss)
-print(accuracy)
+# model= tf.keras.models.load_model('digitsRecog.keras')
+# loss, accuracy= model.evaluate(x_test, y_test)
+# print(loss)
+# print(accuracy)
 
 
 n = 0
